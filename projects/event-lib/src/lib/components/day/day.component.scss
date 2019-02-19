@@ -1,14 +1,26 @@
-@import "../../../../../../node_modules/bootstrap/scss/bootstrap-grid";
-@import "../../styles/variables";
+@import '~bootstrap/scss/bootstrap-grid';
+@import '../../styles/variables';
 
 .day-date {
   text-align: center;
 }
 
 .main-grid {
+  .times {
+    grid-template-columns: 80px auto;
+    flex-wrap: nowrap;
+  }
   .row {
     margin-right: 0px;
     margin-left: 0px;
+    .wrapper {
+      display: flex;
+      flex-grow: 1;
+      .time-slot {
+        background: $elib-vibrant-blue;
+        flex: 1 auto;
+      }
+    }
     .col {
       background: $elib-grey;
       border-color: white;
@@ -16,7 +28,7 @@
       padding: 0.8em 1.2em;
     }
     .first {
-      background-color: white;
+      background: $elib-light-grey;
       -ms-flex: 0 0 80px;
       flex: 0 0 80px;
     }
@@ -36,10 +48,6 @@
     .break-slot {
       background: $elib-grey !important;
     }
-
-    .time-slot {
-      background: $elib-vibrant-blue;
-    }
   }
 }
 
@@ -47,13 +55,11 @@
   .streams {
     display: none !important;
   }
-
-  .ea-schedule-grid {
-    .sub-grid {
-      // TODO ONE COLUMN PER ROW
-    }
-
-    .time-slot {
+  .main-grid {
+    .row {
+      .wrapper {
+        display: block;
+      }
     }
   }
 }

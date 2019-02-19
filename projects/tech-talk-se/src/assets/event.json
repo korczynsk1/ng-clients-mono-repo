@@ -1,15 +1,15 @@
 {
   "general": {
-    "app" : {
-      "mainTitle" : "Apps DE Summit 2018"
+    "app": {
+      "mainTitle": "Apps DE Summit 2018"
     }
   },
-  
+
   "agenda": {
     "days": [
       {
         "id": 2,
-        "date": "2019-02-01",
+        "date": "2019-02-19",
         "timeSlots": [
           {
             "id": 101,
