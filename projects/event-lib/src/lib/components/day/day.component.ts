@@ -30,9 +30,6 @@ export class DayComponent {
   @Input()
   set dayAndStreams(value: DayAndStreams) {
     this.setStreamsFrom(value);
-    if (this.streams.length > 1) {
-      this.gridTemplateColumnsCssProp = '1fr '.repeat(this.streams.length);
-    }
     if (value && value.day) {
       this.date = value.day && value.day.date;
       this.formattedDate = (value.day && value.day.date && value.day.date.format('DD.MM.YYYY')) || '';
@@ -43,7 +40,6 @@ export class DayComponent {
   streams: StreamTo[] = [];
   date: Moment;
   formattedDate = '';
-  gridTemplateColumnsCssProp = '1fr';
   timeSlotGridItemsByStartTimes: { [startTime: string]: TimeSlotGridItem[] } = {};
   startTimes: string[] = [];
 

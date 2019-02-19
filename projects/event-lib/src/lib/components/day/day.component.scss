@@ -1,3 +1,4 @@
+@import '~bootstrap/scss/bootstrap-grid';
 @import '../../styles/variables';
 
 .day-date {
@@ -5,25 +6,32 @@
 }
 
 .main-grid {
-  display: grid;
-  grid-gap: 2px 2px;
-
-  .ea-schedule-grid {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    grid-gap: inherit;
-
-    &.streams {
-      .sub-grid {
-        grid-column-start: 2;
+  .times {
+    grid-template-columns: 80px auto;
+    flex-wrap: nowrap;
+  }
+  .row {
+    margin-right: 0px;
+    margin-left: 0px;
+    .wrapper {
+      display: flex;
+      flex-grow: 1;
+      .time-slot {
+        background: $elib-vibrant-blue;
+        flex: 1 auto;
       }
     }
-
-    .sub-grid {
-      display: grid;
-      grid-gap: inherit;
+    .col {
+      background: $elib-grey;
+      border-color: white;
+      margin: 1px;
+      padding: 0.8em 1.2em;
     }
-
+    .first {
+      background: $elib-light-grey;
+      -ms-flex: 0 0 80px;
+      flex: 0 0 80px;
+    }
     .cell {
       padding: 0.8em 1.2em;
       vertical-align: top;
@@ -31,32 +39,27 @@
     }
 
     .time {
+      -ms-flex: 0 0 80px;
+      flex: 0 0 80px;
       background: $elib-grey;
+      text-align: center;
     }
 
     .break-slot {
-      background: $elib-grey!important;
-    }
-
-    .time-slot {
-      background: $elib-vibrant-blue;
+      background: $elib-grey !important;
     }
   }
-
 }
 
 @media (max-width: 599px) {
   .streams {
-    display: none!important;
+    display: none !important;
   }
-
-  .ea-schedule-grid {
-    .sub-grid {
-      grid-template-columns: 1fr!important;
-    }
-
-    .time-slot {
-      grid-column-end: span 1!important;
+  .main-grid {
+    .row {
+      .wrapper {
+        display: block;
+      }
     }
   }
 }
